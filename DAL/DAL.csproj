@@ -56,7 +56,7 @@
     <Compile Include="DataAccessFactory.cs" />
     <Compile Include="Interfaces\IAuth.cs" />
     <Compile Include="Interfaces\IChange.cs" />
-    <Compile Include="Interfaces\IRepo.cs" />
+    <Compile Include="Interfaces\IRepos.cs" />
     <Compile Include="Migrations\202312171229229_InitDB.cs" />
     <Compile Include="Migrations\202312171229229_InitDB.designer.cs">
       <DependentUpon>202312171229229_InitDB.cs</DependentUpon>

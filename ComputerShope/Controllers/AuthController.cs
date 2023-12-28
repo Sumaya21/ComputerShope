@@ -1,4 +1,5 @@
 ﻿using BLL.Services;
+using ComputerShope.Auth;
 using ComputerShope.Models;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,25 @@ namespace ComputerShope.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Message = ex.Message });
             }
 
+        }
+        [Logged]
+        [HttpGet]
+        [Route("api/logout")]
+        public HttpResponseMessage Logout()
+        {
+            var token = Request.Headers.Authorization.ToString();
+            try
+            {
+                var res = AuthService.Logout(token);
+                // Update the success message here
+                return Request.CreateResponse(HttpStatusCode.OK, new { Msg = "Successfully logged out" });
+            }
+            catch (Exception ex)
+            {
+                // Update the error message here
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Msg = "An error occurred: " + ex.Message });
+
+            }
         }
     }
 }

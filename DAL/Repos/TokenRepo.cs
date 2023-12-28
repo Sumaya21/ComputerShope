@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class TokenRepo : Repo, IRepo<Token, string, Token>
+    internal class TokenRepo : Repo, IRepos<Token, string, Token>
     {
         public Token Create(Token obj)
         {
@@ -35,10 +35,12 @@ namespace DAL.Repos
         public Token Update(Token obj)
         {
            var token = Read(obj.Tkey);
-            db.Entry(token).CurrentValues.SetValues(token);
+            db.Entry(token).CurrentValues.SetValues(obj);
             if(db.SaveChanges() > 0)
             return token;
             return null;
         }
+
+
     }
 }

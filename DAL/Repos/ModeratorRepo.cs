@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class ModeratorRepo : Repo, IRepo<Moderator, int, bool> , IAuth<bool>  , IChange
+    internal class ModeratorRepo : Repo, IRepos<Moderator, int, bool> , IAuth<bool>  , IChange
     {
         public bool Authenticate(string email, string password)
         {

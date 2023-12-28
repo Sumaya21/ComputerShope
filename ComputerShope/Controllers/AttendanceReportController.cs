@@ -30,7 +30,7 @@ namespace ComputerShope.Controllers
         [HttpGet]
         [Route("api/Attendance/{id}")]
 
-        public HttpResponseMessage AttendanceReports(int id )
+        public HttpResponseMessage AttendanceReports(int id)
         {
             try
             {
